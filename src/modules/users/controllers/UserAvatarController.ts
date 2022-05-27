@@ -1,4 +1,5 @@
 import AppError from '@shared/errors/AppError';
+import { instanceToInstance } from 'class-transformer';
 import { Request, Response } from 'express';
 import UpdateUserAvatarService from '../services/UpdateUserAvatarService';
 
@@ -20,6 +21,6 @@ export default class UserAvatarController {
          avatarFileName: requestFileName,
       });
 
-      return response.json(user);
+      return response.json(instanceToInstance(user));
    }
 }
