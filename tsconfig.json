@@ -1,4 +1,7 @@
 {
+  "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+  },
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
