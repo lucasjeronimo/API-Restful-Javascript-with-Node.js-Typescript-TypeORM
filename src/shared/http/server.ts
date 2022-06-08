@@ -15,8 +15,8 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(rateLimiter);
 app.use(pagination);
+app.use(rateLimiter);
 app.use('/files', express.static(uploadConfig.directory));
 app.use(routes);
 
@@ -30,6 +30,9 @@ app.use(
             message: error.message,
          });
       }
+
+      console.log(error);
+
       return response.status(500).json({
          status: 'error',
          message: 'Internal server error',
